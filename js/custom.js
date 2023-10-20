@@ -99,7 +99,7 @@ NOTE:
 *************************/
   var win = $(window),
       foo = $('#typer');
-      foo.typer(['<h2>Professional athlete  </h2>', '<h2>Official league member</h2>' ]);
+      foo.typer(['<h2>Data Analyst  </h2>', '<h2>Mechanical Engineer</h2>' ,'<h2>Footballer</h2>']);
             win.resize(function(){
                 var fontSize = Math.max(Math.min(win.width() / (1 * 10), parseFloat(Number.POSITIVE_INFINITY)), parseFloat(Number.NEGATIVE_INFINITY));
                 foo.css({

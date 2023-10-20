@@ -23,10 +23,10 @@ NOTE:
         // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
 
-      var myLatLng = new google.maps.LatLng(-37.8172098,144.9537367);
+      var myLatLng = new google.maps.LatLng(50.935595,6.961713);
 
       var mapOptions = {
-          zoom: 15,
+          zoom: 8,
           center: myLatLng,
           disableDefaultUI: true,
           scrollwheel: true,
@@ -37,7 +37,7 @@ NOTE:
 
         // How you would like to style the map. 
         // This is where you would paste any style found on Snazzy Maps.
-       styles: [{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"stylers":[{"hue":"#00aaff"},{"saturation":-100},{"gamma":2.15},{"lightness":1}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"lightness":-20}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":57}]}]
+       styles: [{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"transit","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"on"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"lightness":-20}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":57}]}]
     };
 
     // Get the HTML DOM element that will contain your map 
@@ -45,11 +45,11 @@ NOTE:
     var mapElement = document.getElementById('map-canvas');
 
     // Create the Google Map using our element and options defined above
-    var map = new google.maps.Map(mapElement, mapOptions);
+    var map = new google.maps.Map(mapElement, mapOptions,{gestureHandling: "ccoperative",});
 
     // Let's also add a marker while we're at it
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(-37.8172098,144.9537367),
+        position: new google.maps.LatLng(50.935595,6.961713),
         map: map,
     icon: 'images/icons/map-marker.png',
     });

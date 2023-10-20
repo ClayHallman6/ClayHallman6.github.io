@@ -11,14 +11,32 @@ NOTE: This is working ajax PHP contact form. This PHP form will help you to send
 
 
 <?php
+
+
+/* Handle CORS */
+
+// Specify domains from which requests are allowed
+header('Access-Control-Allow-Origin: *');
+
+// Specify which request methods are allowed
+header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS');
+
+// Additional headers which may be sent along with the CORS request
+header('Access-Control-Allow-Headers: X-Requested-With,Authorization,Content-Type');
+
+// Set the age to 1 day to improve speed/caching.
+header('Access-Control-Max-Age: 86400');
+
+
+
 if(isset($_POST["action"])) {
   $name = $_POST['name'];                 // Sender's name
   $email = $_POST['email'];     // Sender's email address
   $phone  = $_POST['phone'];     // Sender's email address
   $message = $_POST['message'];    // Sender's message
-  $from = 'Demo Contact Form';    
-  $to = 'demo@domain.com';     // Recipient's email address
-  $subject = 'Message from Contact Demo ';
+  $from = 'Website Contact Form';    
+  $to = 'c.w.hallman6@gmail.com';     // Recipient's email address
+  $subject = 'Message from Resume Website ';
 
  $body ="From: $name \n E-Mail: $email \n Phone : $phone \n Message : $message"  ;
 	
